@@ -9,6 +9,5 @@
 
 - name: Remove application folder
   file:
-    path: 
-      - "{{ deploy_dir }}"
+    path: /opt/photobank
     state: absent
