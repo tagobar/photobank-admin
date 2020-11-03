@@ -5,7 +5,7 @@
   systemd:
     name: photobank
     state: stopped
-    ignore_errors: yes
+  ignore_errors: yes
 
 - name: Remove application folder
   file:
