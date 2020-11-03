@@ -1,5 +1,12 @@
 ---
 # tasks file for deploy
 
-- name: Test
-  ping:
+- name: Stop running Flask application
+  systemd:
+    name: photobank
+    state: stopped
+
+- name: Remove application folder
+  file:
+    path: {{ deploy_dir }}
+    state: absent
