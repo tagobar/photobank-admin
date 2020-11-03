@@ -9,13 +9,13 @@
 
 - name: Remove application folder
   file:
-    path: "{{ deploy_dir }}"
+    path: "{{ app_dir }}"
     state: absent
 
 - name: Git checkout
   git:
     repo="{{ git_repo }}"
-    dest="{{ deploy_dir }}"
+    dest="{{ app_dir }}"
     version="{{ git_branch }}"
     accept_hostkey=yes
     force=yes
