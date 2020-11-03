@@ -11,3 +11,9 @@
   file:
     path: "{{ deploy_dir }}"
     state: absent
+
+- name: Git checkout
+  git:
+    repo: "{{ git_repo }}"
+    dest: "{{ deploy_dir }}"
+    version: "{{ git_branch }}"
