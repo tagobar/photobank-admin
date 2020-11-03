@@ -8,5 +8,6 @@
 
 - name: Remove application folder
   file:
-    path: {{ deploy_dir }}
+    path: 
+      - "{{ deploy_dir }}"
     state: absent
