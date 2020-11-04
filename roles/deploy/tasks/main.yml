@@ -20,3 +20,7 @@
     accept_hostkey=yes
     force=yes
     key_file=/root/.ssh/id_rsa
+
+- name: Change application`s config
+  template: src=config.j2 dest="{{ app_dir }}"/config.py
+
