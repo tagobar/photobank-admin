@@ -27,10 +27,10 @@
 - name: Use virtual env for python
   shell: pyenv local {{ project_name }}
   args:
-    chdir: {{ app_name }}
+    chdir: "{{ app_name }}"
 
 - name: Install python modules to virtual env
   shell: pip install -r requirements.txt
   args:
-    chdir: {{ app_name }}
+    chdir: "{{ app_name }}"
 
