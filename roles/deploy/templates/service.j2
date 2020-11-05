@@ -7,5 +7,5 @@ After=network.target
 [Service]
 Environment=FLASK_APP=app.py
 WorkingDirectory={{ app_dir }}
-ExecStart=flask run
+ExecStart=/root/.pyenv/shims/flask run
 Restart=on-failure
