@@ -36,7 +36,8 @@
   template: src=service.j2 dest=/etc/systemd/system/{{ project_name }}.service
 
 - name: Daemon-reload
-  systemd: name={{ project_name }} daemon-reload=yes
+  systemd:
+    daemon-reload: yes
 
 - name: Starting application
   systemd: name={{ project_name }} state=started
