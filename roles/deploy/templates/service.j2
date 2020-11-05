@@ -1,0 +1,11 @@
+[Install]
+WantedBy=default.target
+
+[Unit]
+After=network.target
+
+[Service]
+Environment=FLASK_APP=app.py
+WorkingDirectory={{ app_dir }}
+ExecStart=flask run
+Restart=on-failure

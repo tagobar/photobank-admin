@@ -3,7 +3,7 @@
 
 - name: Stop running Flask application
   systemd:
-    name: photobank
+    name: {{ project_name }}
     state: stopped
   ignore_errors: yes
 
@@ -34,3 +34,13 @@
   args:
     chdir: "{{ app_dir }}"
 
+- name: Creating systemd unit
+  template: src=service.j2 dest=/etc/systemd/system/{{ project_name }}.service
+
+- name: Daemon-reload
+  systemd: name={{ projet_name }} daemon-reload=yes
+
+- name: Starting application
+  systemd:
+    name: {{ project_name }}
+    state: started
