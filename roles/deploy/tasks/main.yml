@@ -2,9 +2,7 @@
 # tasks file for deploy
 
 - name: Stop running Flask application
-  systemd:
-    name: {{ project_name }}
-    state: stopped
+  systemd:  name={{ project_name }}  state=stopped
   ignore_errors: yes
 
 - name: Remove application folder
@@ -41,6 +39,4 @@
   systemd: name={{ projet_name }} daemon-reload=yes
 
 - name: Starting application
-  systemd:
-    name: {{ project_name }}
-    state: started
+  systemd: name={{ project_name }} state=started
